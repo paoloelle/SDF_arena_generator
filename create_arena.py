@@ -1,36 +1,35 @@
 # main file of the project
 
-import xml.etree.ElementTree as ET
-import xml.dom.minidom
+import xml.etree.ElementTree as et
 
-from utils import modify_xml_declaration
+from utils import get_custom_xml_declaration
 
 
 def create_arena():
-    sdf = ET.Element('sdf')
+    sdf = et.Element('sdf', version='1.9')
 
-    world = ET.SubElement(sdf, 'world', name='arena')
+    world = et.SubElement(sdf, 'world', name='arena')
 
-    scene = ET.SubElement(world, 'scene')
+    scene = et.SubElement(world, 'scene')
 
-    ambient = ET.SubElement(scene, 'ambient')
+    ambient = et.SubElement(scene, 'ambient')
     ambient.text = '1 1 1 1'
 
-    grid = ET.SubElement(scene, 'grid')
+    grid = et.SubElement(scene, 'grid')
     grid.text = 0
 
     # load ground.sdf file
-    include_ground = ET.SubElement(scene, 'include')
-    uri_ground = ET.SubElement(include_ground, 'uri')
+    include_ground = et.SubElement(scene, 'include')
+    uri_ground = et.SubElement(include_ground, 'uri')
     uri_ground.text = 'ground.sdf'
 
     # load walls.sdf file
-    include_walls = ET.SubElement(scene, 'include')
-    uri_walls = ET.SubElement(include_walls, 'uri')
+    include_walls = et.SubElement(scene, 'include')
+    uri_walls = et.SubElement(include_walls, 'uri')
     uri_walls.text = 'walls.sdf'
 
     # output file with customized xml declaration for SDF files
-    modify_xml_declaration(sdf, 'arena.sdf')
+    get_custom_xml_declaration(sdf, 'arena_automated.sdf')
 
 
 if __name__ == '__main__':
