@@ -1,6 +1,8 @@
 # main file of the project
 
 import xml.etree.ElementTree as ET
+import xml.dom.minidom
+
 
 
 def create_arena():
@@ -17,18 +19,21 @@ def create_arena():
     grid.text = 0
 
     # load ground.sdf file
-    include_ground = ET.SubElement(scene, 'include_ground')
-    uri_ground = ET.SubElement(include_ground, 'uri_ground')
+    include_ground = ET.SubElement(scene, 'include')
+    uri_ground = ET.SubElement(include_ground, 'uri')
     uri_ground.text = 'ground.sdf'
 
     # load walls.sdf file
-    include_walls = ET.SubElement(scene, 'include_walls')
-    uri_walls = ET.SubElement(include_walls, 'uri_walls')
+    include_walls = ET.SubElement(scene, 'include')
+    uri_walls = ET.SubElement(include_walls, 'uri')
     uri_walls.text = 'walls.sdf'
 
-    tree = ET.ElementTree(sdf)
-    tree.write('arena.sdf')
-
+    # xml declaration and output file
+    tree = ET.tostring(sdf)
+    tree = xml.dom.minidom.parseString(tree).toprettyxml()
+    with open('arena.sdf', 'w') as file:
+        file.write(tree)
 
 if __name__ == '__main__':
     create_arena()
+    print('SDF arena successfully created')
