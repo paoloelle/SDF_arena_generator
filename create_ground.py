@@ -158,7 +158,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     size_box_source.text = f'{SOURCE_SIZE_X} {SOURCE_SIZE_Y} {SOURCE_SIZE_Z}'
 
     material_source = et.SubElement(visual_source, 'material')
-    diffuse_source = et.SubElement(material_source, 'diffuse', name='diffuse_source_area')
+    diffuse_source = et.SubElement(material_source, 'diffuse')
     diffuse_source.text = SOURCE_COLOR
 
     # collision source

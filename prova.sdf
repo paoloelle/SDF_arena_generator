@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+	<world name="arena">
+		<scene>
+			<ambient>1 1 1 1</ambient>
+			<grid/>
+			<include>
+				<uri>ground.sdf</uri>
+			</include>
+		</scene>
+	</world>
+</sdf>
