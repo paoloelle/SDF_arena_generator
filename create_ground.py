@@ -3,6 +3,7 @@ import xml.etree.ElementTree as et
 from utils import get_custom_xml_declaration
 
 
+
 def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANGLE, SOURCE_SIZE_Y):
     # nest position
     NEST_POSE_X = 0
@@ -54,7 +55,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     # joint slope-source position relative to link slope
     JOINT_SLOPE_SOURCE_POSE_X = 0
     JOINT_SLOPE_SOURCE_POSE_Y = SLOPE_SIZE_Y/2
-    JOINT_SLOPE_SOURCE_POSE_Z = O
+    JOINT_SLOPE_SOURCE_POSE_Z = 0
 
     #######################
     # start defining code #
@@ -74,7 +75,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     # lower area is splitted in nest area and cache area, the splitting is used for visualization purpose.
     # For collisions we can refer to the lower area
 
-    link_lower_area = et.SubElement(model, 'link,', name='link_lower_area')
+    link_lower_area = et.SubElement(model, 'link', name='link_lower_area')
 
     pose_lower_area = et.SubElement(link_lower_area, 'pose')
     pose_lower_area.text = '0 0 0 0 0 0'
@@ -204,3 +205,4 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
 
     # output file with customized xml declaration for SDF files
     get_custom_xml_declaration(sdf, 'ground.sdf')
+

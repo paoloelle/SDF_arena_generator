@@ -6,10 +6,9 @@ from create_ground import create_ground
 from utils import get_custom_xml_declaration
 
 
-def create_arena():
+def create_arena(file_name):
 
     create_ground(2, 1, 1, 1, 0.3, 2)
-
 
     sdf = et.Element('sdf', version='1.9')
 
@@ -34,10 +33,15 @@ def create_arena():
     uri_walls.text = 'walls.sdf'
 
     # output file with customized xml declaration for SDF files
-    get_custom_xml_declaration(sdf, 'arena_automated.sdf')
+    get_custom_xml_declaration(sdf, f'{file_name}.sdf')
 
 
 if __name__ == '__main__':
-    input()
-    create_arena(file_name) #TODO add file name and parameters
+    arena_name = input('Insert arena name: ')
+
+    #TODO input user parameter passing
+
+    create_arena(arena_name)
+
+
     print('SDF arena successfully created')
