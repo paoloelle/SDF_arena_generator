@@ -2,10 +2,15 @@
 
 import xml.etree.ElementTree as et
 
+from create_ground import create_ground
 from utils import get_custom_xml_declaration
 
 
 def create_arena():
+
+    create_ground(2, 1, 1, 1, 0.3, 2)
+
+
     sdf = et.Element('sdf', version='1.9')
 
     world = et.SubElement(sdf, 'world', name='arena')
@@ -33,6 +38,6 @@ def create_arena():
 
 
 if __name__ == '__main__':
-    create_arena()
-
+    input()
+    create_arena(file_name) #TODO add file name and parameters
     print('SDF arena successfully created')
