@@ -3,6 +3,7 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom
 
+from utils import modify_xml_declaration
 
 
 def create_arena():
@@ -28,11 +29,9 @@ def create_arena():
     uri_walls = ET.SubElement(include_walls, 'uri')
     uri_walls.text = 'walls.sdf'
 
-    # xml declaration and output file
-    tree = ET.tostring(sdf)
-    tree = xml.dom.minidom.parseString(tree).toprettyxml()
-    with open('arena.sdf', 'w') as file:
-        file.write(tree)
+    # output file with customized xml declaration for SDF files
+    modify_xml_declaration(sdf, 'arena.sdf')
+
 
 if __name__ == '__main__':
     create_arena()
