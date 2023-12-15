@@ -34,4 +34,5 @@ def create_arena():
 
 if __name__ == '__main__':
     create_arena()
+
     print('SDF arena successfully created')
