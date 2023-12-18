@@ -7,9 +7,10 @@ from utils import get_custom_xml_declaration
 
 # github updated from MAC
 
-def create_arena(file_name):
+def create_arena(file_name, nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y):
 
-    create_ground(2, 1, 1, 1, 0.3, 2)
+    create_ground(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
+
 
     sdf = et.Element('sdf', version='1.9')
 
@@ -38,11 +39,18 @@ def create_arena(file_name):
 
 
 if __name__ == '__main__':
+
     arena_name = input('Insert arena name: ')
 
-    #TODO input user parameter passing
+    nest_size_x = float(input('Insert nest area size x: '))
+    nest_size_y = float(input('Insert nest area size y: '))
+    cache_size_y = float(input('Insert cache size y: '))
+    slope_size_y = float(input('Insert slope size y: '))
+    slope_angle = float(input('Insert slope angle: '))
+    source_size_y = float(input('Insert source size y: '))
 
-    create_arena(arena_name)
+
+    create_arena(arena_name, nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
 
 
     print('SDF arena successfully created')
