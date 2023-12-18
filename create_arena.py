@@ -5,6 +5,7 @@ import xml.etree.ElementTree as et
 from create_ground import create_ground
 from utils import get_custom_xml_declaration
 
+# github updated from MAC
 
 def create_arena(file_name):
 
