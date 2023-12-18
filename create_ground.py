@@ -4,6 +4,7 @@ from utils import get_custom_xml_declaration
 
 
 def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANGLE, SOURCE_SIZE_Y):
+
     # nest position
     NEST_POSE_X = 0
     NEST_POSE_Y = 1
