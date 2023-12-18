@@ -13,8 +13,8 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
 
     # nest wall
     NEST_WALL_X = 0
-    NEST_WALL_Y = -NEST_SIZE_Y / 2 - WALL_THICKNESS / 2
-    NEST_WALL_Z = WALL_HEIGHT / 2 - GROUND_THICKNESS
+    NEST_WALL_Y = -NEST_SIZE_Y 
+    NEST_WALL_Z = WALL_HEIGHT / 2 + GROUND_THICKNESS
 
     NEST_WALL_SIZE_X = NEST_SIZE_X
     NEST_WALL_SIZE_Y = WALL_THICKNESS
@@ -56,7 +56,7 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     static = et.SubElement(model, 'static')
     static.text = 'true'
 
-    # WALL NEST
+    # NEST WALL
 
     link_wall_nest = et.SubElement(model, 'link', name='link_wall_nest')
     pose_wall_nest = et.SubElement(link_wall_nest, 'pose')
@@ -78,10 +78,15 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     geometry_collision_nest_wall = et.SubElement(collision_nest_wall, 'geometry')
     box_collision_nest_wall = et.SubElement(geometry_collision_nest_wall, 'box')
     size_box_collision_nest_wall = et.SubElement(box_collision_nest_wall, 'size')
-    size_box_collision_nest_wall.tetx = f'{NEST_WALL_SIZE_X} {NEST_WALL_SIZE_Y} {NEST_WALL_SIZE_Z}'
+    size_box_collision_nest_wall.text = f'{NEST_WALL_SIZE_X} {NEST_WALL_SIZE_Y} {NEST_WALL_SIZE_Z}'
+
+    # create sdf file
+    get_custom_xml_declaration(sdf, 'walls.sdf')
+
+    '''
 
     # SOURCE WALL
-
+    
     link_wall_source = et.SubElement(model, 'link', name='link_wall_source')
     pose_wall_source = et.SubElement(link_wall_source, 'pose',
                                      relative_to='link_wall_source')
@@ -103,7 +108,7 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     geometry_collision_source_wall = et.SubElement(collision_source_wall, 'geometry')
     box_collision_source_wall = et.SubElement(geometry_collision_source_wall, 'box')
     size_box_collision_source_wall = et.SubElement(box_collision_source_wall, 'size')
-    size_box_collision_source_wall.tetx = f'{SOURCE_WALL_SIZE_X} {SOURCE_WALL_SIZE_Y} {SOURCE_WALL_SIZE_Z}'
+    size_box_collision_source_wall.text = f'{SOURCE_WALL_SIZE_X} {SOURCE_WALL_SIZE_Y} {SOURCE_WALL_SIZE_Z}'
 
     # edge wall 1
 
@@ -151,4 +156,6 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     geometry_collision_edge_wall2 = et.SubElement(collision_edge_wall2, 'geometry')
     box_collision_edge_wall2 = et.SubElement(geometry_collision_edge_wall2, 'box')
     size_box_collision_edge_wall2 = et.SubElement(box_collision_edge_wall2, 'size')
-    size_box_collision_edge_wall2.text = f'{EDGE_WALL1_SIZE_X} {EDGE_WALL1_SIZE_Y} {EDGE_WALL1_SIZE_Z}'
+    size_box_collision_edge_wall2.text = f'{EDGE_WALL1_SIZE_X} {EDGE_WALL1_SIZE_Y} {EDGE_WALL1_SIZE_Z}' '''
+
+    

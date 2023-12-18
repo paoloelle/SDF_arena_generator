@@ -186,7 +186,6 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     xyz_axis_joint_cache_slope = et.SubElement(axis_joint_cache_slope, 'xyz')
     xyz_axis_joint_cache_slope.text = '1 0 0'
 
-
     # joint slope source
     joint_slope_source = et.SubElement(model, 'joint', name='joint_slope_source', type='fixed')
 
@@ -203,6 +202,8 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     xyz_axis_joint_slope_source = et.SubElement(axis_joint_slope_source, 'xyz')
     xyz_axis_joint_slope_source.text = '1 0 0'
 
-    # output file with customized xml declaration for SDF files
+
+
+    # create sdf file
     get_custom_xml_declaration(sdf, 'ground.sdf')
 
