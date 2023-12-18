@@ -20,11 +20,11 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     NEST_WALL_SIZE_Y = WALL_THICKNESS
     NEST_WALL_SIZE_Z = WALL_HEIGHT
 
-    # source wall 
-    SOURCE_WALL_X = NEST_WALL_Y
+    # source wall (pose relative to source wall)
+    SOURCE_WALL_X = 0
     SOURCE_WALL_Y = WALL_THICKNESS / 2 + NEST_SIZE_Y + CACHE_SIZE_Y + SLOPE_SIZE_Y * cos(
-        SLOPE_ANGLE) + SOURCE_SIZE_Y + WALL_THICKNESS / 2
-    SOURCE_WALL_Z = NEST_WALL_Z
+        SLOPE_ANGLE) + SOURCE_SIZE_Y + WALL_THICKNESS / 2 
+    SOURCE_WALL_Z = 0
 
     SOURCE_WALL_SIZE_X = NEST_WALL_SIZE_X
     SOURCE_WALL_SIZE_Y = NEST_WALL_SIZE_Y
@@ -32,11 +32,11 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
 
     # edge wall1
     EDGE_WALL1_X = NEST_SIZE_X / 2 + WALL_THICKNESS / 2
-    EDGE_WALL1_Y = (NEST_SIZE_Y + CACHE_SIZE_Y + SLOPE_SIZE_Y * cos(SLOPE_ANGLE) + SOURCE_SIZE_Y) / 2
+    EDGE_WALL1_Y = (NEST_SIZE_Y + CACHE_SIZE_Y + SLOPE_SIZE_Y * cos(SLOPE_ANGLE) + SOURCE_SIZE_Y) / 2 + WALL_THICKNESS/2
     EDGE_WALL1_Z = 0
     EDGE_WALL_YAW = pi / 2
 
-    EDGE_WALL1_SIZE_X = NEST_SIZE_Y + CACHE_SIZE_Y + SLOPE_SIZE_Y * cos(SLOPE_ANGLE) + SOURCE_SIZE_Y
+    EDGE_WALL1_SIZE_X = NEST_SIZE_Y + CACHE_SIZE_Y + SLOPE_SIZE_Y * cos(SLOPE_ANGLE) + SOURCE_SIZE_Y + WALL_THICKNESS*2
     EDGE_WALL1_SIZE_Y = WALL_THICKNESS
     EDGE_WALL1_SIZE_Z = WALL_HEIGHT
 
@@ -85,7 +85,7 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     # SOURCE WALL
     
     link_wall_source = et.SubElement(model, 'link', name='link_wall_source')
-    pose_wall_source = et.SubElement(link_wall_source, 'pose')
+    pose_wall_source = et.SubElement(link_wall_source, 'pose', relative_to='link_wall_nest')
     pose_wall_source.text = f'{SOURCE_WALL_X} {SOURCE_WALL_Y} {SOURCE_WALL_Z} 0 0 0'
 
     # visual source wall
@@ -106,12 +106,12 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     size_box_collision_source_wall = et.SubElement(box_collision_source_wall, 'size')
     size_box_collision_source_wall.text = f'{SOURCE_WALL_SIZE_X} {SOURCE_WALL_SIZE_Y} {SOURCE_WALL_SIZE_Z}'
 
-    '''
+    
 
     # edge wall 1
 
     link_edge_wall1 = et.SubElement(model, 'link', name='link_edge_wall1')
-    pose_edge_wall1 = et.SubElement(link_edge_wall1, 'pose')
+    pose_edge_wall1 = et.SubElement(link_edge_wall1, 'pose', relative_to='link_wall_nest')
     pose_edge_wall1.text = f'{EDGE_WALL1_X} {EDGE_WALL1_Y} {EDGE_WALL1_Z} 0 0 {EDGE_WALL_YAW}'
 
     # visual edge wall 1
@@ -132,12 +132,14 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     size_box_collision_edge_wall1 = et.SubElement(box_collision_edge_wall1, 'size')
     size_box_collision_edge_wall1.text = f'{EDGE_WALL1_SIZE_X} {EDGE_WALL1_SIZE_Y} {EDGE_WALL1_SIZE_Z}'
 
+    
+
     # edge wall 2
-
+    
     link_edge_wall2 = et.SubElement(model, 'link', name='link_edge_wall2')
-    pose_edge_wall1 = et.SubElement(link_edge_wall1, 'pose', relative_to=link_edge_wall1)
-    pose_edge_wall1.text = f'{EDGE_WALL2_X} {EDGE_WALL2_Y} {EDGE_WALL2_Z} 0 0 0'
-
+    pose_edge_wall2 = et.SubElement(link_edge_wall2, 'pose', relative_to='link_edge_wall1')
+    pose_edge_wall2.text = f'{EDGE_WALL2_X} {EDGE_WALL2_Y} {EDGE_WALL2_Z} 0 0 0'
+    
     # visual edge wall 2
     visual_edge_wall2 = et.SubElement(link_edge_wall2, 'visual', name='visual_edge_wall2')
     geometry_visual_edge_wall2 = et.SubElement(visual_edge_wall2, 'geometry')
@@ -154,7 +156,7 @@ def create_walls(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_ANG
     geometry_collision_edge_wall2 = et.SubElement(collision_edge_wall2, 'geometry')
     box_collision_edge_wall2 = et.SubElement(geometry_collision_edge_wall2, 'box')
     size_box_collision_edge_wall2 = et.SubElement(box_collision_edge_wall2, 'size')
-    size_box_collision_edge_wall2.text = f'{EDGE_WALL1_SIZE_X} {EDGE_WALL1_SIZE_Y} {EDGE_WALL1_SIZE_Z}' '''
+    size_box_collision_edge_wall2.text = f'{EDGE_WALL1_SIZE_X} {EDGE_WALL1_SIZE_Y} {EDGE_WALL1_SIZE_Z}' 
 
     
     # create sdf file
