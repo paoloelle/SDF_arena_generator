@@ -7,7 +7,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
 
     # nest position
     NEST_POSE_X = 0
-    NEST_POSE_Y = 1
+    NEST_POSE_Y = 0
     NEST_POSE_Z = 0
 
     NEST_SIZE_Z = 0.1

@@ -18,7 +18,7 @@ def create_arena(file_name,
 
     create_ground(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
 
-    #create_walls(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
+    create_walls(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
 
 
     sdf = et.Element('sdf', version='1.9')
