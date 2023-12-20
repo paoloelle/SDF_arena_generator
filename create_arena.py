@@ -33,6 +33,21 @@ def create_arena(file_name,
     grid = et.SubElement(scene, 'grid')
     grid.text = '0'
 
+    # gazebo
+    gazebo_contact = et.SubElement(world, 'gazebo')
+    plugin_gazebo_contact = et.SubElement(gazebo_contact, 'plugin',
+                                          file_name='libignition-gazebo-contact-system.so',
+                                          name='ignition::gazebo::systems::Contact')
+    gazebo_sensors = et.SubElement(world, 'gazebo')
+    plugin_gazebo_sensors = et.SubElement(gazebo_sensors, 'plugin',
+                                          file_name='libignition-gazebo-sensors-system.so',
+                                          name='ignition::gazebo::systems::Sensors')
+    render_engine_plugin_gazebo_sensors = et.SubElement(plugin_gazebo_sensors, 'render_engine')
+    render_engine_plugin_gazebo_sensors.text = 'ogre'
+
+
+
+
     # load ground.sdf file
     include_ground = et.SubElement(world, 'include')
     uri_ground = et.SubElement(include_ground, 'uri')

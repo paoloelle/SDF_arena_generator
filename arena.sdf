@@ -1,24 +1,18 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
-
-
-
 	<world name="arena">
 		<scene>
 			<ambient>1 1 1 1</ambient>
 			<grid>0</grid>
 		</scene>
-
 		<gazebo>
-			<plugin filename="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"></plugin>
+			<plugin file_name="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"/>
 		</gazebo>
 		<gazebo>
-			<plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
+			<plugin file_name="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
 				<render_engine>ogre</render_engine>
 			</plugin>
 		</gazebo>
-
-
 		<include>
 			<uri>ground.sdf</uri>
 		</include>
