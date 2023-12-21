@@ -1,6 +1,5 @@
 # main file of the project
 
-# prova github
 
 import xml.etree.ElementTree as et
 
