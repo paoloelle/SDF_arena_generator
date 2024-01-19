@@ -2,17 +2,23 @@
 <sdf version="1.9">
 	<world name="arena">
 		<scene>
-			<ambient>1 1 1 1</ambient>
+			<!--<ambient>0 0 0 1</ambient>-->
 			<grid>0</grid>
 		</scene>
-		<!--<gazebo>
+		<gazebo>
 			<plugin file_name="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"/>
 		</gazebo>
 		<gazebo>
 			<plugin file_name="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
 				<render_engine>ogre</render_engine>
 			</plugin>
-		</gazebo>-->
+		</gazebo>
+		<include>
+			<uri>ground.sdf</uri>
+		</include>
+		<include>
+			<uri>walls.sdf</uri>
+		</include>
 
 		<model name="object">
 			<link name="link_object">
@@ -20,8 +26,8 @@
 				<visual name="visual_object">					
 					<geometry>
 						<cylinder>
-							<radius>.1</radius>
-							<length>0.02</length>
+							<radius>0.1</radius>
+							<length>0.1</length>
 						</cylinder>
 					</geometry>
 					<material>
@@ -32,22 +38,14 @@
 				<collision name="collision_object">
 					<geometry>
 						<cylinder>
-							<radius>.1</radius>
-							<length>0.02</length>
+							<radius>0.1</radius>
+							<length>0.1</length>
 						</cylinder>
 					</geometry>
 				</collision>
 
 			</link>
 		</model>
-		<include>
-			<uri>ground.sdf</uri>
-		</include>
-		<include>
-			<uri>walls.sdf</uri>
-		</include>
-
-
 
 	</world>
 </sdf>
