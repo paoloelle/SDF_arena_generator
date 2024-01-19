@@ -20,7 +20,7 @@
 			<uri>walls.sdf</uri>
 		</include>
 
-		<!-- TODO add this as python code-->
+		<!-- TODO this needs to be created as python code-->
 		<model name="object">
 			<link name="link_object">
 				<pose>0 2 1 0 0 0</pose>
