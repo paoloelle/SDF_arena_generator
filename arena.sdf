@@ -19,5 +19,8 @@
 		<include>
 			<uri>walls.sdf</uri>
 		</include>
+		<include>
+			<uri>objects.sdf</uri>
+		</include>
 	</world>
 </sdf>

@@ -58,6 +58,11 @@ def create_arena(file_name,
     uri_walls = et.SubElement(include_walls, 'uri')
     uri_walls.text = 'walls.sdf'
 
+    # load objects.sdf file
+    include_walls = et.SubElement(world, 'include')
+    uri_walls = et.SubElement(include_walls, 'uri')
+    uri_walls.text = 'objects.sdf'
+
     # output file with customized xml declaration for SDF files
     get_custom_xml_declaration(sdf, f'{file_name}.sdf')
 
