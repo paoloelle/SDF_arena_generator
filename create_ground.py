@@ -12,7 +12,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
 
     NEST_SIZE_Z = 0.1
 
-    NEST_COLOR = '0 1 0 1'
+    NEST_COLOR = '1 1 1 1'
 
     # cache position
     CACHE_POSE_X = NEST_POSE_X
@@ -23,7 +23,7 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     CACHE_SIZE_X = NEST_SIZE_X
     CACHE_SIZE_Z = NEST_SIZE_Z
 
-    CACHE_COLOR = '0 0.8 0 1'
+    CACHE_COLOR = '0.5 0.5 0.5 1'
 
     # position collision lower area
     COLLISION_LOWER_AREA_POSE_X = NEST_POSE_X
@@ -39,13 +39,13 @@ def create_ground(NEST_SIZE_X, NEST_SIZE_Y, CACHE_SIZE_Y, SLOPE_SIZE_Y, SLOPE_AN
     SLOPE_SIZE_X = NEST_SIZE_X
     SLOPE_SIZE_Z = NEST_SIZE_Z
 
-    SLOPE_COLOR = '0 0.6 0 1'
+    SLOPE_COLOR = '0.2 0.2 0.2 1'
 
     # source area size
     SOURCE_SIZE_X = NEST_SIZE_X
     SOURCE_SIZE_Z = NEST_SIZE_Z
 
-    SOURCE_COLOR = '0 0.4 0 1'
+    SOURCE_COLOR = '0.2 0.2 0.2 1'
 
     # joint cache-slope position relative to link lower area
     JOINT_CACHE_SLOPE_POSE_X = 0

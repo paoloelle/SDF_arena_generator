@@ -8,7 +8,6 @@ from create_walls import create_walls
 from utils import get_custom_xml_declaration
 
 
-# github updated from MAC
 
 def create_arena(file_name,
                  nest_size_x, nest_size_y,
