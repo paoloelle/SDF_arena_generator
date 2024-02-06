@@ -34,14 +34,14 @@
 					</box>
 				</geometry>
 
-				<surface>
+				<!--<surface>
 					<friction>
 						<ode>
-							<mu>1</mu>
-							
+							<mu>100</mu>
+							<fdir1> 0 1 0</fdir1>
 						</ode>
 					</friction>
-				</surface>
+				</surface>-->
 			
 
 			</collision>
