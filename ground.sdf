@@ -37,7 +37,7 @@
 				<surface>
 					<friction>
 						<ode>
-							<mu>10000000</mu>
+							<mu>1</mu>
 							
 						</ode>
 					</friction>
