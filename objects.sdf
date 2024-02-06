@@ -6,7 +6,7 @@
 		<model name="objects">
 
 			<link name="link_object1">
-				<pose>0.5 3 1 0 0 0</pose>
+				<pose>0.5 2.6 1 0 0 0</pose>
 				<visual name="visual_object1">					
 					<geometry>
 						<cylinder>
@@ -45,7 +45,7 @@
 
 
         
-			<link name="link_object2">
+			<!--<link name="link_object2">
 				<pose>1.5 3 1 0 0 0</pose>
 				<visual name="visual_object2">					
 					<geometry>
@@ -77,10 +77,10 @@
 					</surface>
 				</collision>
 
-			</link>
+			</link>-->
 
 			<link name="link_object3">
-				<pose>-0.5 3 1 0 0 0</pose>
+				<pose>-0.5 2.6 1 0 0 0</pose>
 				<visual name="visual_object3">					
 					<geometry>
 						<cylinder>
@@ -116,7 +116,7 @@
 			</link>
 		
         
-			<link name="link_object4">
+			<!--<link name="link_object4">
 				<pose>-1.5 3 1 0 0 0</pose>
 				<visual name="visual_object4">					
 					<geometry>
@@ -150,7 +150,7 @@
 
 				</collision>
 
-			</link>
+			</link>-->
 		</model>
 
 	</sdf>
