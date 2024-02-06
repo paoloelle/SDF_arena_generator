@@ -46,7 +46,7 @@
 
         
 			<link name="link_object2">
-				<pose>0 3 1 0 0 0</pose>
+				<pose>1.5 3 1 0 0 0</pose>
 				<visual name="visual_object2">					
 					<geometry>
 						<cylinder>
@@ -78,10 +78,46 @@
 				</collision>
 
 			</link>
+
+			<link name="link_object3">
+				<pose>-0.5 3 1 0 0 0</pose>
+				<visual name="visual_object3">					
+					<geometry>
+						<cylinder>
+							<radius>.1</radius>
+							<length>0.08</length>
+						</cylinder>
+					</geometry>
+					<material>
+						<diffuse>0 1 0 1</diffuse>
+					</material>
+				</visual>
+
+				<collision name="collision_object4">
+					<geometry>
+						<cylinder>
+							<radius>.1</radius>
+							<length>0.08</length>
+						</cylinder>
+					</geometry>
+
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.05</mu>
+								
+							</ode>
+						</friction>
+					</surface>
+				
+
+				</collision>
+
+			</link>
 		
         
 			<link name="link_object4">
-				<pose>-0.5 3 1 0 0 0</pose>
+				<pose>-1.5 3 1 0 0 0</pose>
 				<visual name="visual_object4">					
 					<geometry>
 						<cylinder>
