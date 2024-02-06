@@ -5,7 +5,7 @@
 		
 		<model name="objects">
 
-			<!--<link name="link_object1">
+			<link name="link_object1">
 				<pose>0.5 3 1 0 0 0</pose>
 				<visual name="visual_object1">					
 					<geometry>
@@ -27,11 +27,20 @@
 						</cylinder>
 					</geometry>
 
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.05</mu>
+								
+							</ode>
+						</friction>
+					</surface>
+
 
 					
 				</collision>
 
-			</link> -->
+			</link>
 		
 
 
@@ -69,37 +78,9 @@
 				</collision>
 
 			</link>
-
-
-        
-			<!--<link name="link_object3">
-				<pose>0.5 8.5 1 0 0 0</pose>
-				<visual name="visual_object3">					
-					<geometry>
-						<cylinder>
-							<radius>.1</radius>
-							<length>0.08</length>
-						</cylinder>
-					</geometry>
-					<material>
-						<diffuse>0 0 1 1</diffuse>
-					</material>
-				</visual>
-
-				<collision name="collision_object3">
-					<geometry>
-						<cylinder>
-							<radius>.1</radius>
-							<length>0.08</length>
-						</cylinder>
-					</geometry>
-				</collision>
-
-			</link> -->
 		
-
         
-			<!--<link name="link_object4">
+			<link name="link_object4">
 				<pose>-0.5 3 1 0 0 0</pose>
 				<visual name="visual_object4">					
 					<geometry>
@@ -120,9 +101,20 @@
 							<length>0.08</length>
 						</cylinder>
 					</geometry>
+
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.05</mu>
+								
+							</ode>
+						</friction>
+					</surface>
+				
+
 				</collision>
 
-			</link>-->
+			</link>
 		</model>
 
 	</sdf>
