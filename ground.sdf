@@ -33,6 +33,17 @@
 						<size>2.0 2.0 0.1</size>
 					</box>
 				</geometry>
+
+				<surface>
+					<friction>
+						<ode>
+							<mu>10000000</mu>
+							
+						</ode>
+					</friction>
+				</surface>
+			
+
 			</collision>
 		</link>
 		<link name="link_slope">
@@ -44,7 +55,7 @@
 					</box>
 				</geometry>
 				<material>
-					<diffuse>0.2 0.2 0.2 1</diffuse>
+					<diffuse>0 1 1 1</diffuse> <!--<diffuse>0.2 0.2 0.2 1</diffuse>-->
 				</material>
 			</visual>
 			<collision name="collision_slope">
@@ -53,6 +64,10 @@
 						<size>2.0 1.0 0.1</size>
 					</box>
 				</geometry>
+
+				
+				
+
 			</collision>
 		</link>
 		<link name="link_source_area">
