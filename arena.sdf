@@ -5,14 +5,6 @@
 			<ambient>1 1 1 1</ambient>
 			<grid>0</grid>
 		</scene>
-
-
-		<physics type="ode">
-			<max_step_size>0.003</max_step_size>
-			<real_time_factor>1.0</real_time_factor>
-		</physics>
-
-
 		<gazebo>
 			<plugin file_name="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"/>
 		</gazebo>
@@ -21,18 +13,6 @@
 				<render_engine>ogre</render_engine>
 			</plugin>
 		</gazebo>
-		
-		<plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
-    		<plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
-    		<plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
-    
-      		<plugin filename="libignition-gazebo-contact-system.so" name="ignition::gazebo::systems::Contact"></plugin>
-
-      		<plugin filename="libignition-gazebo-sensors-system.so" name="ignition::gazebo::systems::Sensors">
-        		<render_engine>ogre</render_engine>
-      	</plugin>
-		
-		
 		<include>
 			<uri>ground.sdf</uri>
 		</include>

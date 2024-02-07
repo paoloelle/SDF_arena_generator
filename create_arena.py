@@ -8,18 +8,14 @@ from create_walls import create_walls
 from utils import get_custom_xml_declaration
 
 
-
 def create_arena(file_name,
                  nest_size_x, nest_size_y,
                  cache_size_y,
                  slope_size_y, slope_angle,
                  source_size_y):
-
-
     create_ground(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
 
     create_walls(nest_size_x, nest_size_y, cache_size_y, slope_size_y, slope_angle, source_size_y)
-
 
     sdf = et.Element('sdf', version='1.9')
 
@@ -45,9 +41,6 @@ def create_arena(file_name,
     render_engine_plugin_gazebo_sensors = et.SubElement(plugin_gazebo_sensors, 'render_engine')
     render_engine_plugin_gazebo_sensors.text = 'ogre'
 
-
-
-
     # load ground.sdf file
     include_ground = et.SubElement(world, 'include')
     uri_ground = et.SubElement(include_ground, 'uri')
@@ -59,9 +52,9 @@ def create_arena(file_name,
     uri_walls.text = 'walls.sdf'
 
     # load objects.sdf file
-    include_walls = et.SubElement(world, 'include')
-    uri_walls = et.SubElement(include_walls, 'uri')
-    uri_walls.text = 'objects.sdf'
+    include_objects = et.SubElement(world, 'include')
+    uri_objects = et.SubElement(include_objects, 'uri')
+    uri_objects.text = 'objects.sdf'
 
     # output file with customized xml declaration for SDF files
     get_custom_xml_declaration(sdf, f'{file_name}.sdf')

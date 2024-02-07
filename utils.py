@@ -7,3 +7,4 @@ def get_custom_xml_declaration(xml_root, file_name):
     tree = xml.dom.minidom.parseString(tree).toprettyxml()
     with open(file_name, 'w') as file:
         file.write(tree)
+

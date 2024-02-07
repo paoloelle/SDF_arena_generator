@@ -8,7 +8,7 @@
 				<pose>0 0 0 0 0 0</pose>
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 				<material>
@@ -19,7 +19,7 @@
 				<pose>0 1.0 0 0 0 0</pose>
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 				<material>
@@ -30,7 +30,7 @@
 				<pose>0 0.5 0 0 0 0</pose>
 				<geometry>
 					<box>
-						<size>2.0 2.0 0.1</size>
+						<size>4.0 2.0 0.1</size>
 					</box>
 				</geometry>
 			</collision>
@@ -40,7 +40,7 @@
 			<visual name="visual_slope">
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 				<material>
@@ -50,7 +50,7 @@
 			<collision name="collision_slope">
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 			</collision>
@@ -60,7 +60,7 @@
 			<visual name="visual_source_area">
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 				<material>
@@ -70,7 +70,7 @@
 			<collision name="collision_source_area">
 				<geometry>
 					<box>
-						<size>2.0 1.0 0.1</size>
+						<size>4.0 1.0 0.1</size>
 					</box>
 				</geometry>
 			</collision>
