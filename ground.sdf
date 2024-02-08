@@ -23,7 +23,7 @@
 					</box>
 				</geometry>
 				<material>
-					<diffuse>0.5 0.5 0.5 1</diffuse>
+					<diffuse>0.6 0.6 0.6 1</diffuse>
 				</material>
 			</visual>
 			<collision name="collision_lower_area">
@@ -64,7 +64,7 @@
 					</box>
 				</geometry>
 				<material>
-					<diffuse>0.2 0.2 0.2 1</diffuse>
+					<diffuse>0.1 0.1 0.1 1</diffuse>
 				</material>
 			</visual>
 			<collision name="collision_source_area">
