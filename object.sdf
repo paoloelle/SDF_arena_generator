@@ -3,10 +3,15 @@
 
 	
 
-		<model name ="object">
-			<link name="link_object1">
-				<pose>0 2.8 1 0 0 0</pose>
-				<visual name="visual_object1">					
+		<<model name ="object">
+			
+			<pose>0 2.8 1 0 0 0</pose>
+			
+			<link name="link_object">
+
+				
+				
+				<visual name="visual_object">					
 					<geometry>
 						<cylinder>
 							<radius>.1</radius>
@@ -18,7 +23,7 @@
 					</material>
 				</visual>
 
-				<collision name="collision_object1">
+				<collision name="collision_object">
 					<geometry>
 						<cylinder>
 							<radius>.1</radius>
