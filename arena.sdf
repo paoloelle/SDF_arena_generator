@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
-<world name="arena">
+	<world name="arena">
 
 		<scene>
 			<ambient>1 1 1 1</ambient>
@@ -88,43 +88,42 @@
 		
 		<model name="objects">
 
-		<plugin filename="libignition-gazebo-pose-publisher-system" name="ignition::gazebo::systems::PosePublisher">
-			<publish_link_pose>false</publish_link_pose>
-			<publish_model_pose>false</publish_model_pose>
-			<publish_nested_model_pose>true</publish_nested_model_pose>
-			<use_pose_vector_msg>true</use_pose_vector_msg>
-		</plugin>
+			<pose>0 0 0 0 0 0</pose>
 
-		<!-- include objects-->
-		<include>
-			<uri>object.sdf</uri>
-			<name>object1</name>
-			<pose>0.4 2.8 1 0 0 0</pose>
-		</include>
+			<!-- include objects-->
 
-		<include>
-			<uri>object.sdf</uri>
-			<name>object2</name>
-			<pose>-0.4 2.8 1 0 0 0</pose>
-		</include>
+			<include>
+				<uri>object.sdf</uri>
+				<name>object1</name>
+				<pose>0.4 0.1 1 0 0 0</pose>
+			</include>
+			
+			<include>
+				<uri>object.sdf</uri>
+				<name>object2</name>
+				<pose>-0.4 0.8 1 0 0 0</pose>
+			</include>
 
-		<include>
-			<uri>object.sdf</uri>
-			<name>object3</name>
-			<pose>1.3 2.8 1 0 0 0</pose>
-		</include>
+			<include>
+				<uri>object.sdf</uri>
+				<name>object3</name>
+				<pose>1.3 0.8 1 0 0 0</pose>
+			</include>
 
-		<include>
-			<uri>object.sdf</uri>
-			<name>object4</name>
-			<pose>-1.3 2.8 1 0 0 0</pose>
-		</include>
+			<include>
+				<uri>object.sdf</uri>
+				<name>object4</name>
+				<pose>-1.3 0.8 1 0 0 0</pose>
+			</include>
 
-	</model>
+			<plugin filename="libignition-gazebo-pose-publisher-system" name="ignition::gazebo::systems::PosePublisher">
+				<publish_link_pose>false</publish_link_pose>
+				<publish_model_pose>false</publish_model_pose>
+				<publish_nested_model_pose>true</publish_nested_model_pose>
+				<use_pose_vector_msg>true</use_pose_vector_msg>
+			</plugin>
 
-
-
-
+		</model>
 
 
 	</world>
