@@ -4,9 +4,13 @@
 	
 
 		<model name ="object">
+
+			
 			
 			
 			<link name="link_object">
+
+				
 
 				<visual name="visual_object">					
 					<geometry>

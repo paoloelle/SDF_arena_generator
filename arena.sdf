@@ -90,14 +90,25 @@
 
 			<!-- include objects-->
 
-			<include>
+			<!--added this dummy object cause hte PosePublisher plugin takes this first model as a reference frame
+			for all the other nested model. In this way if I move this model all the other models will be updated.
+			To avoid this I put a static dummy object somewhere far from the arena-->
+			<model name ="dummy_object">
+
+				<static>1</static>
+
+				<pose> 0 3 3 0 0 0 </pose>
+
+			</model>
+
+			<include>/model/objects/pose
 				<uri>object.sdf</uri>
 				<name>object1</name>
 				<pose>0.4 0.1 1 0 0 0</pose>
 			</include>
 			
 			<include>
-				<uri>object.sdf</uri>
+				<uri>object.sdf</uri>/home/paolo
 				<name>object2</name>
 				<pose>-0.4 0.8 1 0 0 0</pose>
 			</include>
